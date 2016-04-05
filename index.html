@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html> 
+    <title>DeluxeTextColoring XXI</title>
+    <head> 
+        <meta http-equiv="content-type" content="text/html"; charset="UTF-8" /> 
+        <meta charset="UTF-8" /> 
+		<link rel="stylesheet"
+    href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" />
+        <script src="javascript.js"></script>
+    </head>
+	
+    <body>
+	 <div class="form-group">
+        <div class="form">
+            <label for="inputText"> Text </label>
+            <input id="inputText"></input> 
+
+            <label for="selectColor">Color</label>
+			<select id="selectColor">
+				<option>red</option>
+				<option>green</option>
+				<option>blue</option>
+				<option>black</option>
+				<option>yellow</option>
+			</select>
+            <label for="selectMarker">Marker</label>
+			<select id ="selectMarker">
+				<option>disc</option>
+				<option>circle</option>
+				<option>square</option>
+			</select> 
+		</div>
+	</div>
+        <div class="form">
+            <button class="btn btn-large btn-primary" id="btnCreate">Create</button> 
+            <button class="btn btn-large" id="btnChange" disabled = true>Change</button> 
+            <button class="btn btn-large" id="btnDelete" disabled = true>Delete</button> 
+        </div>
+		</div>
+        <div class="form">
+            <ul id="list" class="list">              
+            </ul>
+        </div>
+        <script type="text/javascript">
+            var btnCreate = window.document.getElementById("btnCreate"); 
+            var btnChange = window.document.getElementById("btnChange"); 
+            var btnDelete = window.document.getElementById("btnDelete"); 
+            var ul = document.getElementById('list');
+            btnCreate.onclick = function(){ FuncCreate(document.getElementById("inputText").value,                   
+                                                       document.getElementById("selectColor").value, 
+                                                       document.getElementById("selectMarker").value); };            
+            ul.onclick = function(event) { Select(event); };
+            btnChange.onclick = function() { Change(); };
+            btnDelete.onclick = function() { Delete(); };
+        </script> 
+    </body> 
+</html>
